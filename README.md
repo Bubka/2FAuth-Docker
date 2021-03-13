@@ -1,5 +1,6 @@
-# Docker setup for 2FAuth
 ![Docker Pulls](https://img.shields.io/docker/pulls/2fauth/2fauth?style=flat-square&logo=docker) ![https://github.com/Bubka/2FAuth-Docker/blob/php/7.4-apache/LICENSE](https://img.shields.io/github/license/Bubka/2FAuth.svg?style=flat-square) [![Use PHP7.4](https://img.shields.io/badge/php-7.4.*-8892BF.svg?style=flat-square)](https://secure.php.net/downloads.php) 
+
+# Docker setup for 2FAuth
 
 Deploy [2FAuth](https://github.com/Bubka/2FAuth) using a docker container in a breeze.
 
