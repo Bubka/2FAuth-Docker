@@ -30,3 +30,9 @@ It will run the 2FAuth image binded to a MySQL image with persisted volumes.
 - Open a terminal on the repo directory and run `docker-compose up -d && docker-compose logs -f`
 - Open your browser on http://localhost/
 - Enjoy :)
+
+## Contributing
+
+Feedbacks and bug reporting are always welcome.
+Please share your feedback in the [2FAuth discussion board](https://github.com/Bubka/2FAuth/discussions)
+Please report any issue in the [2FAuth issue tracker](https://github.com/Bubka/2FAuth/issues)
