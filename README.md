@@ -34,5 +34,7 @@ It will run the 2FAuth image binded to a MySQL image with persisted volumes.
 ## Contributing
 
 Feedbacks and bug reporting are always welcome.
+
 Please share your feedback in the [2FAuth discussion board](https://github.com/Bubka/2FAuth/discussions)
+
 Please report any issue in the [2FAuth issue tracker](https://github.com/Bubka/2FAuth/issues)
