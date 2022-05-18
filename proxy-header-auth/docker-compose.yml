@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.7"
 
 services:
   proxy:
@@ -7,11 +7,12 @@ services:
       - ./default.conf.template:/etc/nginx/templates/default.conf.template
       - ./.htpasswd:/etc/nginx/.htpasswd
     ports:
-      - "8000:8000"
+      - "8080:8080"
 
   2fauth:
     image: 2fauth/2fauth:dev
     environment:
+      - APP_LOG_LEVEL=debug
       #- PROXY_LOGOUT_URL=null
       # Authentication settings
       # The default authentication guard
@@ -26,8 +27,8 @@ services:
       # Name of the HTTP headers sent by the reverse proxy that identifies the authenticated user at proxy level.
       # Check your proxy documentation to find out how these headers are named (i.e 'REMOTE_USER', 'REMOTE_EMAIL', etc...)
       # (only relevant when AUTHENTICATION_GUARD is set to 'reverse-proxy-guard')
-      #- AUTH_PROXY_HEADER_FOR_USER=null
-      - AUTH_PROXY_HEADER_FOR_EMAIL=REMOTE_EMAIL
+      - AUTH_PROXY_HEADER_FOR_USER=HTTP_REMOTE_USER
+      - AUTH_PROXY_HEADER_FOR_EMAIL=HTTP_REMOTE_EMAIL
       # Use this setting to declare trusted proxied.
       # Supported:
       #   '*': to trust any proxy

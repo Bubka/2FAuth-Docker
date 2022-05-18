@@ -1,21 +1,20 @@
 resolver 127.0.0.11 valid=15s; # docker resolver
 
 server {
-    listen       8000;
+    listen       8080;
     server_name  2fauth.localhost;
 
     auth_basic "Restricted";
     auth_basic_user_file /etc/nginx/.htpasswd;
 
     location / {
-        set $upstream_app 2fauth.localhost:8000;
+        set $upstream_app 2fauth:8000;
+        set $remote_email user@nginx.proxy;
         proxy_pass http://$upstream_app;
-        
-        auth_request_set    $remote_email user@nginx.auth;
 
         proxy_set_header     X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header     REMOTE_USER $remote_user;
-        proxy_set_header     REMOTE_EMAIL $remote_email;
+        proxy_set_header     Remote-User $remote_user;
+        proxy_set_header     Remote-Email $remote_email;
         proxy_set_header     Host $http_host;
     }
 }
