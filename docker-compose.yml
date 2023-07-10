@@ -7,7 +7,7 @@ services:
       - 2fauth_storage:/var/www/html/storage
     env_file: .env
     ports:
-      - 80:80
+      - 8000:8000
     depends_on:
       - 2fauth-db
     networks:
